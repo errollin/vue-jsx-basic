@@ -6,6 +6,7 @@ import type { Expense } from "@/models";
 import { Card } from "@/components/common";
 import ExpenseList from "@/components/Expenses/ExpenseList/ExpenseList";
 import ExpenseFilter from "@/components/Expenses/ExpenseFilter/ExpenseFilter";
+import ExpenseChart from "@/components/Expenses/ExpenseChart/ExpenseChart";
 
 const Expenses = defineComponent({
   props: {
@@ -43,6 +44,7 @@ const Expenses = defineComponent({
           selected={filteredYear.value}
           onFilterChange={handleFilterChange}
         />
+        <ExpenseChart expenses={filteredExpenses.value} />
         <ExpenseList expenses={filteredExpenses.value} />
       </Card>
     );
